@@ -1,21 +1,31 @@
-"use strict";
+'use strict';
 
 window.addEventListener('load', function () {
 
 	var br_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var br_height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', '../img/sea.jpg', false);
+	xhr.send();
+	if (xhr.status != 200) {
+		alert(xhr.status + ': ' + xhr.statusText);
+	} else {
+		alert(xhr.responseText);
+	}
+
 	var koef = void 0;
 	var parusa = void 0,
 	    car = void 0,
 	    sea = new Image();
-	sea.src = "/img/sea.jpg";
+	sea.src = "../img/sea.jpg";
 	sea.onload = function () {
+		console.log('sea done');
 		parusa = new Image();
-		parusa.src = "/img/Parusa.png";
+		parusa.src = "../img/Parusa.png";
 		parusa.onload = function () {
 			car = new Image();
-			car.src = "/img/car.png";
+			car.src = "../img/car.png";
 			car.onload = function () {
 				koef = Math.max(sea.width / sea.height, parusa.width / parusa.height, car.width / car.height);
 				MakeParallax(br_width, br_height);
