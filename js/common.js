@@ -5,44 +5,44 @@ window.addEventListener('load', function () {
 	var br_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var br_height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-	var koef = void 0;
-	var parusa = void 0,
-	    car = void 0,
-	    sea = new Image();
-	sea.src = "../img/sea.jpg";
-	sea.onload = function () {
-		console.log('sea done');
-		parusa = new Image();
-		parusa.src = "../img/Parusa.png";
-		parusa.onload = function () {
-			car = new Image();
-			car.src = "../img/car.png";
-			car.onload = function () {
-				koef = Math.max(sea.width / sea.height, parusa.width / parusa.height, car.width / car.height);
-				MakeParallax(br_width, br_height);
-			};
-		};
-	};
+	var koef = 1.5;
+	// let parusa, car, sea = new Image();
+	// sea.src = "../img/sea.jpg";
+	// sea.onload = function() {
+	// 	console.log('sea done');
+	// 	parusa = new Image();
+	// 	parusa.src = "../img/Parusa.png";
+	// 	parusa.onload = function() {
+	// 		car = new Image();
+	// 		car.src = "../img/car.png";
+	// 		car.onload = function() {
+	// 			koef = Math.max(sea.width/sea.height, parusa.width/parusa.height, car.width/car.height);
+	// 			MakeParallax(br_width, br_height);
+	// 		}
+	// 	}
+	// }
+
+	MakeParallax(br_width, br_height);
 
 	function MakeParallax(width, height) {
 		document.body.style.position = 'absolute';
 
 		var div1 = document.getElementById('div1');
-		div1.style.backgroundImage = 'url(' + sea.src + ')';
+		div1.style.backgroundImage = 'url(/img/sea.jpg)';
 		div1.style.backgroundPosition = 'bottom';
 		div1.style.backgroundSize = 'cover';
 		div1.style.position = 'absolute';
 		div1.style.zIndex = 0;
 
 		var div2 = document.getElementById('div2');
-		div2.style.backgroundImage = 'url(' + car.src + ')';
+		div2.style.backgroundImage = 'url(/img/car.png)';
 		div2.style.backgroundPosition = 'bottom';
 		div2.style.backgroundSize = '100% auto';
 		div2.style.position = 'absolute';
 		div2.style.zIndex = 1;
 
 		var div3 = document.getElementById('div3');
-		div3.style.backgroundImage = 'url(' + parusa.src + ')';
+		div3.style.backgroundImage = 'url(/img/Parusa.png)';
 		div3.style.backgroundPosition = 'bottom';
 		div3.style.backgroundSize = '100% auto';
 		div3.style.position = 'absolute';
