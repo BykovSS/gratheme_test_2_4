@@ -5,15 +5,6 @@ window.addEventListener('load', function () {
 	var br_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var br_height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', '../img/sea.jpg', false);
-	xhr.send();
-	if (xhr.status != 200) {
-		alert(xhr.status + ': ' + xhr.statusText);
-	} else {
-		alert(xhr.responseText);
-	}
-
 	var koef = void 0;
 	var parusa = void 0,
 	    car = void 0,
