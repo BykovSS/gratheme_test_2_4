@@ -28,21 +28,21 @@ window.addEventListener('load', function () {
 		document.body.style.position = 'absolute';
 
 		var div1 = document.getElementById('div1');
-		div1.style.backgroundImage = 'url(/img/sea.jpg)';
+		div1.style.backgroundImage = 'url(img/sea.jpg)';
 		div1.style.backgroundPosition = 'bottom';
 		div1.style.backgroundSize = 'cover';
 		div1.style.position = 'absolute';
 		div1.style.zIndex = 0;
 
 		var div2 = document.getElementById('div2');
-		div2.style.backgroundImage = 'url(/img/car.png)';
+		div2.style.backgroundImage = 'url(img/car.png)';
 		div2.style.backgroundPosition = 'bottom';
 		div2.style.backgroundSize = '100% auto';
 		div2.style.position = 'absolute';
 		div2.style.zIndex = 1;
 
 		var div3 = document.getElementById('div3');
-		div3.style.backgroundImage = 'url(/img/Parusa.png)';
+		div3.style.backgroundImage = 'url(img/Parusa.png)';
 		div3.style.backgroundPosition = 'bottom';
 		div3.style.backgroundSize = '100% auto';
 		div3.style.position = 'absolute';
